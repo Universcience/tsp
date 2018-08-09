@@ -1,0 +1,12 @@
+Skyrim
+skyrim.png	1536	1066
+9
+Falkreath	620	920
+Dawnstar	850	220
+Markath	90	580
+Morthal	590	370
+Riften	1370	930
+Solitude	510	210
+Whiterun	820	610
+Windhelm	1230	460
+Winterhold	1140	220

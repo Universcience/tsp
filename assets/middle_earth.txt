@@ -1,0 +1,14 @@
+Middle Earth
+middle_earth.png	1600	1200
+11
+Hobbiton	410	330
+Bree	520	340
+Rivendell	770	320
+Erebor	1065	210
+Dol Guldur	940	500
+Moria	765	465
+Lorien	845	510
+Isengard	700	645
+Edoras	790	750
+Minas Tirith	1010	840
+Barad-dur	1180	790

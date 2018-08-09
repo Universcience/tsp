@@ -1,0 +1,13 @@
+France
+france.png	2400	2400
+10
+Paris	1340.0	720.0
+Rouen	1110.0	550.0
+Lille	1460.0	280.0
+Strasbourg	2280.0	750.0
+Lyon	1730.0	1450.0
+Marseille	1860.0	1980.0
+Nice	2200.0	1880.0
+Toulouse	1160.0	1900.0
+Bordeaux	820.0	1600.0
+Rennes	630.0	880.0
