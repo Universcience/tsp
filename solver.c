@@ -1,5 +1,5 @@
 /*  Quick and dirty implementation of a Traveling Salesman Problem solver.
- *  Copyright (C) 2018 - Jérôme Kirman
+ *  Copyright (C) 2018-2019 - Jérôme Kirman
  *
  *  This program is free software: you can redistribute it and/or modify it
  *  under the terms of the GNU Affero General Public License as published by
@@ -15,12 +15,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-//#include <math.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
 #include "solver.h"
+
+void bruteforce_aux (const map* m, run* r, bool* done);
 
 // Current best run
 run* best_run = NULL;
@@ -107,17 +108,15 @@ run* nearest_neighbor (const map* m)
 	done[0] = true;
 
 	do {
-		id nn = -1;
+		id nn = (id) -1;
 		dist nd = MAX_DIST;
-		for (id i = 0 ; i < m->size ; ++i)
-		{
+		for (id i = 0 ; i < m->size ; ++i) {
 			if (done[i])
 				continue;
 
 			dist d = m->data[r->path[r->size-1]][i];
 
-			if (d < nd)
-			{
+			if (d < nd) {
 				nd = d;
 				nn = i;
 			}

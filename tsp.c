@@ -1,5 +1,5 @@
 /*  Quick and dirty implementation of a Traveling Salesman Problem solver.
- *  Copyright (C) 2018 - Jérôme Kirman
+ *  Copyright (C) 2018-2019 - Jérôme Kirman
  *
  *  This program is free software: you can redistribute it and/or modify it
  *  under the terms of the GNU Affero General Public License as published by
@@ -26,7 +26,7 @@ dist distance (dist x1, dist y1, dist x2, dist y2)
 	return sqrt(dx*dx + dy*dy);
 }
 
-map* make_map (city* towns, unsigned n)
+map* make_map (city* towns, size_t n)
 {
 	map* m = calloc(1, sizeof(map));
 	m->size = n;
@@ -34,10 +34,9 @@ map* make_map (city* towns, unsigned n)
 	m->data = calloc(n, sizeof(dist*));
 
 	// Euclidian distances.
-	for (unsigned i = 0 ; i < n ; ++i)
-	{
+	for (size_t i = 0 ; i < n ; ++i) {
 		m->data[i] = calloc(n, sizeof(dist));
-		for (unsigned j = 0 ; j < n ; ++j)
+		for (size_t j = 0 ; j < n ; ++j)
 			m->data[i][j] = distance(towns[i].x, towns[i].y, towns[j].x, towns[j].y);
 	}
 	return m;
@@ -45,7 +44,7 @@ map* make_map (city* towns, unsigned n)
 
 void destroy_map (map* m)
 {
-	for (unsigned i = 0 ; i < m->size ; ++i)
+	for (size_t i = 0 ; i < m->size ; ++i)
 		free(m->data[i]);
 	free(m->data);
 	free(m);

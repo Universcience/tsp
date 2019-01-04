@@ -34,23 +34,23 @@ typedef struct {
 // Full map data
 typedef unsigned id; // Index of a city in map
 typedef struct {
-	unsigned size; // Number of cities
-	city* towns;   // List of cities by id
-	dist** data;   // Distance matrix between cities, by id
+	size_t size; // Number of cities
+	city* towns; // List of cities by id
+	dist** data; // Distance matrix between cities, by id
 } map;
 
 // Full or partial run on a map
 typedef struct {
-	id* path;      // Visiting order (a list of m->size ids)
-	unsigned size; // Number of cities currently in run
-	dist length;   // Total run length
+	id* path;    // Visiting order (a list of m->size ids)
+	size_t size; // Number of cities currently in run
+	dist length; // Total run length
 } run;
 
 // Distance between two points on map
 dist distance (dist x1, dist y1, dist x2, dist y2);
 
 // Converts a list of city with coordinates into a full map with distances
-map* make_map (city* towns, unsigned n);
+map* make_map (city* towns, size_t n);
 
 // Free a map
 void destroy_map (map* m);
